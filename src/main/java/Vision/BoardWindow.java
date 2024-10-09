@@ -5,7 +5,7 @@ import java.awt.*;
 
 
 
-public class TableroWindow {
+public class BoardWindow {
 
     private static  JFrame window;
 
@@ -15,7 +15,7 @@ public class TableroWindow {
         window.setSize(800,800);
         window.setVisible(true);
         //window.setResizable(false);
-        TableroWindow.createBasePanel(window);
+        BoardWindow.createBasePanel(window);
 
     }
     private static void createBasePanel(JFrame window){
@@ -23,7 +23,7 @@ public class TableroWindow {
         JPanel base = new JPanel(new BorderLayout());
         base.setBackground(Color.gray);
         editBasePanel(base);
-        TableroWindow.createTableroPanel(base);
+        BoardWindow.createBoardPanel(base);
         window.add(base,BorderLayout.CENTER);
 
 
@@ -37,17 +37,17 @@ public class TableroWindow {
         base.add(namepanel,BorderLayout.NORTH);
     }
 
-    private static void createTableroPanel(JPanel base){
-        JPanel tablero = new JPanel();
-        tablero.setPreferredSize(new Dimension(600,600));
-        tablero.setBackground(Color.white);
-        tablero.setBorder(BorderFactory.createLineBorder(Color.white, 4)); // Añadir borde negro
+    private static void createBoardPanel(JPanel base){
+        JPanel Board = new JPanel();
+        Board.setPreferredSize(new Dimension(600,600));
+        Board.setBackground(Color.white);
+        Board.setBorder(BorderFactory.createLineBorder(Color.white, 4)); // Añadir borde negro
 
-        // Usar un layout de GridBag para centrar el tablero
+        // Usar un layout de GridBag para centrar el Board
         JPanel centerPanel = new JPanel();
         centerPanel.setLayout(new GridBagLayout());
         centerPanel.setBackground(Color.gray); // Mantener el mismo color de fondo
-        centerPanel.add(tablero); // Agregar el tablero al panel central
+        centerPanel.add(Board); // Agregar el Board al panel central
 
         base.add(centerPanel, BorderLayout.CENTER);
     }

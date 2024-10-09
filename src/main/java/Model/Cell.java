@@ -3,28 +3,28 @@ package Model;
 import java.util.Objects;
 
 public class Cell {
-    private int numberMinas;
-    private boolean mina;
+    private int mineNumber;
+    private boolean mine;
 
-    public Cell(int numberMinas, boolean mina) {
-        this.numberMinas = numberMinas;
-        this.mina = mina;
+    public Cell(int mineNumber, boolean mine) {
+        this.mineNumber = mineNumber;
+        this.mine = mine;
     }
 
-    public int getNumberMinas() {
-        return numberMinas;
+    public int getmineNumber() {
+        return mineNumber;
     }
 
-    public void setNumberMinas(int numberMinas) {
-        this.numberMinas = numberMinas;
+    public void setmineNumber(int mineNumber) {
+        this.mineNumber = mineNumber;
     }
 
-    public boolean isMina() {
-        return mina;
+    public boolean ismine() {
+        return mine;
     }
 
-    public void setMina(boolean mina) {
-        this.mina = mina;
+    public void setmine(boolean mine) {
+        this.mine = mine;
     }
 
     @Override
@@ -32,12 +32,12 @@ public class Cell {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cell cell = (Cell) o;
-        return numberMinas == cell.numberMinas && mina == cell.mina;
+        return mineNumber == cell.mineNumber && mine == cell.mine;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(numberMinas, mina);
+        return Objects.hash(mineNumber, mine);
     }
 }
 
